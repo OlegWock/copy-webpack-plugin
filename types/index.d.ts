@@ -96,6 +96,7 @@ export = CopyPlugin;
 /**
  * @typedef {Object} AdditionalOptions
  * @property {number} [concurrency]
+ * @property {boolean} [once]
  */
 /**
  * @typedef {Object} PluginOptions
@@ -286,4 +287,5 @@ type ObjectPattern = {
 type Pattern = StringPattern | ObjectPattern;
 type AdditionalOptions = {
   concurrency?: number | undefined;
+  once?: boolean | undefined;
 };

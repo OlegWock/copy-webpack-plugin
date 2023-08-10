@@ -153,6 +153,11 @@
           "type": "number",
           "description": "Limits the number of simultaneous requests to fs.",
           "link": "https://github.com/webpack-contrib/copy-webpack-plugin#concurrency"
+        },
+        "once": {
+          "type": "boolean",
+          "description": "Copy assets only once (mainly for watch mode)",
+          "link": "https://github.com/webpack-contrib/copy-webpack-plugin#once"
         }
       }
     }

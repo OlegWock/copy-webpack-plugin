@@ -130,6 +130,7 @@ const template = /\[\\*([\w:]+)\\*\]/i;
 /**
  * @typedef {Object} AdditionalOptions
  * @property {number} [concurrency]
+ * @property {boolean} [once]
  */
 
 /**
@@ -780,10 +781,17 @@ class CopyPlugin {
    */
   apply(compiler) {
     const pluginName = this.constructor.name;
+    let firstRun = true;
 
     compiler.hooks.thisCompilation.tap(pluginName, (compilation) => {
       const logger = compilation.getLogger("copy-webpack-plugin");
       const cache = compilation.getCache("CopyWebpackPlugin");
+
+      if (!firstRun && this.options.once) {
+        return;
+      }
+
+      firstRun = false;
 
       /**
        * @type {typeof import("globby").globby}

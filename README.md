@@ -970,6 +970,7 @@ module.exports = {
 ### Options
 
 - [`concurrency`](#concurrency)
+- [`once`](#once)
 
 #### `concurrency`
 
@@ -982,6 +983,18 @@ type concurrency = number;
 default: `100`
 
 limits the number of simultaneous requests to fs
+
+#### `once`
+
+type:
+
+```ts
+type once = boolean;
+```
+
+default: `false`
+
+runs copy only once. Might be useful if you have a lot of files that slow down compilation in watch mode
 
 **webpack.config.js**
 
