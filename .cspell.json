@@ -32,7 +32,8 @@
     "newbinextension",
     "behavour",
     "dottedfile",
-    "tempfile"
+    "tempfile",
+    "eslintcache"
   ],
 
   "ignorePaths": [
